@@ -43,7 +43,7 @@ dd2 <- dada(drp2, err=err2, BAND_SIZE=32, multithread=TRUE)
 
 read_ret_table<-as.data.frame(cbind(ccs=prim2[,1], primers=prim2[,2], filtered=track2[,2], denoised=sapply(dd2, function(x) sum(x$denoised))))
 read_ret_table$read_ret_per<- read_ret_table$denoised / read_ret_table$ccs
-#write.csv(read_ret_table, "/Users/jrabasc/Desktop/github/DMC_pacbio_read_fate_analysis/assets/read_retention_table.csv", row.names = FALSE)
+write.csv(read_ret_table, "/Users/jrabasc/Desktop/github/DMC_pacbio_read_fate_analysis/assets/read_retention_table.csv")
 
 
 graph_df<-read_ret_table
